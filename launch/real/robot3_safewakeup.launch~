@@ -4,6 +4,8 @@
   <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
   <node pkg="nodelet" type="nodelet" name="mobile_base" args="load kobuki_node/KobukiNodelet mobile_base_nodelet_manager">
     <rosparam file="$(find kobuki_node)/param/base.yaml" command="load"/>
+    <param name="base_frame" value="/robot_3/base_footprint"/>
+    <param name="odom_frame" value="/robot_3/odom"/>
     <remap from="mobile_base/odom" to="odom"/>
     <remap from="mobile_base/joint_states" to="joint_states"/>
   </node>
@@ -39,7 +41,7 @@ mobile_base_nodelet_manager">
     <remap from="keyop_vel_smoother/robot_cmd_vel" to="mobile_base/commands/velocity"/>
   </node>
   
-  <node pkg="kobuki_keyop" type="keyop" name="keyop" output="screen">
+  <!--node pkg="kobuki_keyop" type="keyop" name="keyop" output="screen">
     <remap from="keyop/motor_power" to="mobile_base/commands/motor_power"/>
     <remap from="keyop/cmd_vel" to="keyop_vel_smoother/raw_cmd_vel"/>
     <param name="linear_vel_step" value="0.05" type="double"/>
@@ -47,7 +49,7 @@ mobile_base_nodelet_manager">
     <param name="angular_vel_step" value="0.33" type="double"/>
     <param name="angular_vel_max" value="6.6" type="double"/>
     <param name="wait_for_connection_" value="true" type="bool"/>
-  </node>
+  </node-->
 
 
       

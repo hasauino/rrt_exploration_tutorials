@@ -1,9 +1,11 @@
 <!-- -->
 <launch> 
-<group ns="/robot_1">
+<group ns="/robot_2">
   <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
   <node pkg="nodelet" type="nodelet" name="mobile_base" args="load kobuki_node/KobukiNodelet mobile_base_nodelet_manager">
     <rosparam file="$(find kobuki_node)/param/base.yaml" command="load"/>
+    <param name="base_frame" value="/robot_2/base_footprint"/>
+    <param name="odom_frame" value="/robot_2/odom"/>
     <remap from="mobile_base/odom" to="odom"/>
     <remap from="mobile_base/joint_states" to="joint_states"/>
   </node>
@@ -52,7 +54,7 @@ mobile_base_nodelet_manager">
 
       
     <node pkg="hokuyo_node" type="hokuyo_node" name="laser1">
-    <param name="frame_id" value="/robot_1/base_link"/>
+    <param name="frame_id" value="/robot_2/base_link"/>
     <param name="calibrate_time" type="bool" value="true"/>
     <param name="intensity" type="bool" value="false"/>
     <param name="min_ang" value="-2.356194437"/>
@@ -63,8 +65,8 @@ mobile_base_nodelet_manager">
   
 
 
-  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser_link" args="0.115 0 .14 0 0 0 /robot_1/base_link /robot_1/base_laser_link 20" />
-  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0 0 0 0  /robot_1/base_footprint /robot_1/base_link 20" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser_link" args="0.115 0 .14 0 0 0 /robot_2/base_link /robot_2/base_laser_link 20" />
+  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0 0 0 0  /robot_2/base_footprint /robot_2/base_link 20" />
 
 </group>
  </launch>
