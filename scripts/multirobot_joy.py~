@@ -54,7 +54,7 @@ def node():
 	
 	pubs=list()
     	for i in range(0,n_robots):
-		pubs.append( rospy.Publisher('/robot_'+str(i+1)+'/keyop_vel_smoother/raw_cmd_vel', Twist, queue_size=10))		#/keyop_vel_smoother/raw_cmd_vel	/mobile_base/commands/velocity
+		pubs.append( rospy.Publisher('/robot_'+str(i+1)+'/mobile_base/commands/velocity', Twist, queue_size=10))		#/keyop_vel_smoother/raw_cmd_vel	/mobile_base/commands/velocity
 		
 
 
