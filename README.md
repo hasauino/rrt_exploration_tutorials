@@ -1,2 +1,3 @@
 # rrt_exploration_tutorials
-This package provides launch files for Gazebo simulation needed to test the rrt_exploration package
+This package is a complementary package for the [rrt_exploration](https://github.com/hasauino/rrt_exploration) ROS package. It provides Gazebo simulation files needed.
+
