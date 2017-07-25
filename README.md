@@ -1,5 +1,5 @@
 # rrt_exploration_tutorials
-This package is a complementary package for the [rrt_exploration](https://github.com/hasauino/rrt_exploration) ROS package. It provides all the needed Gazebo simulation files to bring up Kobuki robots equipped with laser scanners and ready for the [rrt_exploration](https://github.com/hasauino/rrt_exploration) ROS package. 
+This package is a complementary package for the [rrt_exploration](https://github.com/hasauino/rrt_exploration) ROS package. It provides all the needed Gazebo simulation files to bring up Kobuki robots equipped with laser scanners and ready for the [rrt_exploration](https://github.com/hasauino/rrt_exploration) package. 
 
 ## 1. Requirements
 The package has been tested on both ROS Kinetic and ROS Indigo, it should work on other distributions like Jade. The following requirements are needed before installing the package:
@@ -24,3 +24,8 @@ sudo apt-get install ros-kinetic-kobuki-gazebo
 ```
 ## 2. Installation
 Download the package and place it inside the ```/src``` folder in your workspace. And then compile using ```catkin_make```.
+
+## 3. Example
+```sh
+
+```
