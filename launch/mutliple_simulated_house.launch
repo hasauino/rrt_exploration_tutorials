@@ -55,8 +55,8 @@ Launch file for running the multirobot simulation on gazebo
 <node pkg="tf" type="static_transform_publisher" name="robot3_to_robot1" args="0 0.8 0 0 0 0 /robot_1/map /robot_3/map 20" />
 
 <!-- Map megring (know inital position case)-->
-<include file="$(find multi_kobuki_gazebo)/launch/includes/initposes.launch"/>
-<include file="$(find multirobot_map_merge)/launch/map_merge.launch"/>
+<include file="$(find rrt_exploration_tutorials)/launch/includes/initposes.launch"/>
+<include file="$(find rrt_exploration_tutorials)/launch/includes/map_merge.launch"/>
 
 
 
